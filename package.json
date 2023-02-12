@@ -1,21 +1,19 @@
 {
   "name": "ems",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "expo": "~47.0.12",
-    "expo-status-bar": "~1.4.2",
-    "react": "18.1.0",
-    "react-native": "0.70.5"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsompura3/enhanced-management-system.git"
   },
-  "devDependencies": {
-    "@babel/core": "^7.12.9"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsompura3/enhanced-management-system/issues"
   },
-  "private": true
+  "homepage": "https://github.com/vsompura3/enhanced-management-system#readme"
 }
