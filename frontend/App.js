@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, SafeAreaView, View } from "react-native";
 import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
@@ -11,7 +12,8 @@ export default function App() {
         style={styles.linearGradient}
       >
         <View style={styles.container}>
-          <Login />
+          {/* <Login /> */}
+          <Dashboard />
           <StatusBar style="auto" />
         </View>
       </LinearGradient>

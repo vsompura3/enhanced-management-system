@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     marginTop: 28,
     padding: 10,
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
     height: 48,
   },
