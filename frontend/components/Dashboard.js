@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import { useState } from "react";
+import { LinearGradient } from "expo-linear-gradient";
 import { BeakerIcon } from "@heroicons/react/24/solid";
 
 export default function Dashboard() {
@@ -9,6 +10,7 @@ export default function Dashboard() {
   );
   const [roomNo, setRoomNo] = useState("36 - 802A");
   const [attendance, setAttendance] = useState("100");
+  const [numberOfAssignment, setNumberOfAssignment] = useState("0");
   return (
     <View style={styles.app}>
       <View style={styles.header}>
@@ -24,14 +26,25 @@ export default function Dashboard() {
         <Text style={styles.options}>Grades</Text>
       </View>
       <View style={styles.events}>
-        <Text style={styles.title}>Upcoming class </Text>
+        <Text style={styles.titleDark}>Upcoming class </Text>
         <Text style={styles.details}>{course}</Text>
         <Text style={styles.details}>{roomNo}</Text>
         <Text style={[styles.details, styles.percent]}>Current Attendance</Text>
         <View style={styles.snap}>
           <Text>Progress bar as in attendance</Text>
-          <Text style={styles.percent}>{attendance}%</Text>
+          <Text style={styles.percentDark}>{attendance}%</Text>
         </View>
+      </View>
+      <View style={styles.task}>
+        <Text style={styles.titleLight}>Assignments</Text>
+        <Text style={styles.percentLight}>{numberOfAssignment}</Text>
+      </View>
+      <View style={styles.task}>
+        <Text style={styles.titleLight}>Assignments</Text>
+        <Text style={styles.percentLight}>{numberOfAssignment}</Text>
+      </View>
+      <View style={styles.navbar}>
+        <Text style={styles.titleLight}>navbar</Text>
       </View>
     </View>
   );
@@ -52,10 +65,11 @@ const styles = StyleSheet.create({
   },
   intro: {
     flex: 0.2,
+    overflow: "hidden",
   },
   welcome: {
     color: "#fff",
-    fontSize: 36,
+    fontSize: 32,
     fontWeight: "bold",
     paddingHorizontal: 20,
   },
@@ -83,13 +97,14 @@ const styles = StyleSheet.create({
   events: {
     flex: 0.2,
     backgroundColor: "#A9ABFE",
+    borderColor: "#A9ABFE",
     borderWidth: 2,
     borderRadius: 24,
     margin: 16,
     padding: 20,
     justifyContent: "flex-start",
   },
-  title: {
+  titleDark: {
     fontWeight: "bold",
     fontSize: 20,
   },
@@ -101,7 +116,36 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  percent: {
+  percentDark: {
     fontWeight: "bold",
+  },
+  task: {
+    flex: 0.1,
+    backgroundColor: "#262A34",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    borderWidth: 1,
+    borderRadius: 16,
+    borderColor: "#262A34",
+    marginHorizontal: 16,
+    marginVertical: 8,
+  },
+  titleLight: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+  percentLight: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
+  navbar: {
+    flex: 0.1,
+    marginHorizontal: 20,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "flex-end",
+    alignSelf: "center",
   },
 });
