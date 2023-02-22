@@ -15,7 +15,8 @@ export default function Dashboard() {
   );
   const [roomNo, setRoomNo] = useState("36 - 802A");
   const [attendance, setAttendance] = useState("100");
-  const [numberOfAssignment, setNumberOfAssignment] = useState("0");
+  const [numberOfAssignment, setNumberOfAssignment] = useState("4");
+  const [numberOfExams, setNumberOfExams] = useState("7");
   return (
     <View style={styles.app}>
       <View style={styles.header}>
@@ -55,19 +56,26 @@ export default function Dashboard() {
         </View>
       </View>
       <View style={styles.task}>
+        <Image
+          source={require("../assets/attendance.png")}
+          style={styles.taskIcon}
+        />
         <Text style={styles.titleLight}>Assignments</Text>
         <View style={styles.taskSub}>
           <Text style={styles.percentLight}>{numberOfAssignment}</Text>
-          <MaterialCommunityIcons name="greater-than" size={20} color="white" />
+          <AntDesign name="right" size={20} color="white" />
         </View>
       </View>
       <View style={styles.task}>
-        <Text style={styles.titleLight}>Assignments</Text>
-        <Text style={styles.percentLight}>{numberOfAssignment}</Text>
-        <MaterialCommunityIcons name="greater-than" size={20} color="white" />
+        <Image source={require("../assets/exam.png")} style={styles.taskIcon} />
+        <Text style={styles.titleLight}>Exams</Text>
+        <View style={styles.taskSub}>
+          <Text style={styles.percentLight}>{numberOfExams}</Text>
+          <AntDesign name="right" size={20} color="white" />
+        </View>
       </View>
       <View style={styles.navbar}>
-        <AntDesign name="home" size={32} color="white" />
+        <AntDesign name="home" size={32} color="white" onPress={""} />
         <Entypo name="text" size={32} color="white" />
         <Ionicons name="add-circle" size={36} color="blue" />
         <Ionicons name="notifications" size={32} color="white" />
@@ -186,25 +194,34 @@ const styles = StyleSheet.create({
     borderColor: "#262A34",
     marginHorizontal: 16,
     marginVertical: 8,
+    padding: 8,
+  },
+  taskIcon: {
+    height: 40,
+    width: 40,
   },
   titleLight: {
     color: "#fff",
     fontWeight: "bold",
     fontSize: 20,
+    width: 150,
   },
   taskSub: {
     flexDirection: "row",
+    width: 50,
     justifyContent: "space-between",
     alignItems: "center",
   },
   percentLight: {
+    fontSize: 20,
     color: "#fff",
     fontWeight: "bold",
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
+    alignContent: "center",
   },
   navbar: {
     flex: 0.1,
-    marginHorizontal: 12,
+    marginTop: 10,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-end",
