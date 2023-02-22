@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Login() {
   return (
@@ -8,25 +9,30 @@ export default function Login() {
       colors={["#1C192D", "#181A20", "#18172A"]}
       style={styles.app}
     >
-      <View style={styles.icons}>
-        <Image style={styles.logo} source={require("../assets/ems-logo.png")} />
-      </View>
-
       <LinearGradient
         colors={["#1C192D", "#181A20", "#18172A"]}
         style={styles.signup}
       >
+        <Ionicons
+          name="arrow-back-circle-outline"
+          size={40}
+          color="white"
+          style={styles.back}
+        />
         <View style={styles.header}>
-          <Text style={styles.subheading}>Enhanced Management System</Text>
-          <Text style={styles.tag}>"Making lives faster and better."</Text>
+          <Text style={styles.subheading}>Log In</Text>
+          <Text style={styles.tag}>
+            Use your <Text style={styles.emphasis}>UMS Credentials</Text> to
+            login
+          </Text>
         </View>
         <LinearGradient
           colors={["#1C192D", "#181A20", "#181A21"]}
           style={styles.input}
         >
-          <Text style={styles.label}>Your Registration Number</Text>
+          <Text style={styles.label}>Registration Number</Text>
           <TextInput style={styles.credential} />
-          <Text style={styles.label}>Your Password</Text>
+          <Text style={styles.label}>Password</Text>
           <TextInput style={styles.credential} />
           <Text style={styles.btn}>Sign In</Text>
         </LinearGradient>
@@ -38,49 +44,37 @@ export default function Login() {
 const styles = StyleSheet.create({
   app: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  icons: {
-    flex: 0.3,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 16,
-  },
-  logo: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    width: 149,
   },
   signup: {
     flex: 1,
   },
+  back: {
+    paddingVertical: 25,
+    paddingHorizontal: 20,
+  },
   header: {
     flex: 0.3,
-    paddingHorizontal: 24,
-    paddingVertical: 24,
-    alignItems: "center",
-    justifyContent: "center",
+    paddingHorizontal: 28,
+    paddingVertical: 28,
+    padding: 20,
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
   },
-  heading: {
-    fontSize: 36,
+  subheading: {
+    fontSize: 32,
     color: "#fff",
     textAlign: "center",
     fontWeight: "bold",
+    paddingVertical: 10,
   },
-  subheading: {
-    fontSize: 24,
+  emphasis: {
     color: "#fff",
-    textAlign: "center",
     fontWeight: "bold",
   },
   tag: {
     fontSize: 18,
-    color: "#fff",
+    color: "grey",
     textAlign: "center",
-    fontStyle: "italic",
   },
   input: {
     flex: 0.4,
@@ -95,6 +89,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
     alignItems: "center",
     justifyContent: "flex-start",
+    textTransform: "uppercase",
   },
   credential: {
     width: 336,

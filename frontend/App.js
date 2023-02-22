@@ -1,9 +1,8 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, SafeAreaView, View } from "react-native";
+import { StatusBar as SBar } from "expo-status-bar";
+import { StyleSheet, SafeAreaView, View, StatusBar } from "react-native";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import { LinearGradient } from "expo-linear-gradient";
-import { BeakerIcon } from "@heroicons/react/24/solid";
 
 export default function App() {
   return (
@@ -14,7 +13,7 @@ export default function App() {
       >
         {/* <Login /> */}
         <Dashboard />
-        <StatusBar style="auto" />
+        <SBar style="auto" />
       </LinearGradient>
     </SafeAreaView>
   );
@@ -23,7 +22,7 @@ export default function App() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    paddingTop: Platform.OS === "android" ? 25 : 0,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   linearGradient: {
     flex: 1,

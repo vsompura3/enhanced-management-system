@@ -4,12 +4,12 @@
     "slug": "ems",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/ems-logo.png",
+    "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/ems-logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#18172A"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -18,16 +18,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tanupam.ems"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/ems-logo.png",
+        "backgroundColor": "#18172A"
+      },
+      "package": "com.tanupam.ems"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/ems-logo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "08118a7f-9a54-4691-ae9c-61acbbc9c9f3"
+      }
     }
   }
 }

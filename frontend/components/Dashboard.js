@@ -1,7 +1,12 @@
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import { BeakerIcon } from "@heroicons/react/24/solid";
+import {
+  Ionicons,
+  AntDesign,
+  Entypo,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
 
 export default function Dashboard() {
   const [name, setName] = useState("Tanupam Saha");
@@ -15,15 +20,29 @@ export default function Dashboard() {
     <View style={styles.app}>
       <View style={styles.header}>
         <Text style={styles.module}>Dashboard</Text>
+        <View style={styles.icons}>
+          <Ionicons
+            name="chatbubble-ellipses-outline"
+            size={28}
+            color="white"
+            style={styles.icon}
+          />
+          <Image
+            source={require("../assets/avatar.png")}
+            style={styles.avatar}
+          />
+        </View>
       </View>
       <View style={styles.intro}>
         <Text style={styles.welcome}>Hello,</Text>
         <Text style={styles.welcome}>{name}</Text>
       </View>
       <View style={styles.menu}>
-        <Text style={[styles.options, styles.active]}>Overview</Text>
-        <Text style={styles.options}>Timetable</Text>
-        <Text style={styles.options}>Grades</Text>
+        <View style={styles.menuOptions}>
+          <Text style={[styles.options, styles.active]}>Overview</Text>
+          <Text style={styles.options}>Timetable</Text>
+        </View>
+        <Ionicons name="ios-options-sharp" size={28} color="white" />
       </View>
       <View style={styles.events}>
         <Text style={styles.titleDark}>Upcoming class </Text>
@@ -37,14 +56,22 @@ export default function Dashboard() {
       </View>
       <View style={styles.task}>
         <Text style={styles.titleLight}>Assignments</Text>
-        <Text style={styles.percentLight}>{numberOfAssignment}</Text>
+        <View style={styles.taskSub}>
+          <Text style={styles.percentLight}>{numberOfAssignment}</Text>
+          <MaterialCommunityIcons name="greater-than" size={20} color="white" />
+        </View>
       </View>
       <View style={styles.task}>
         <Text style={styles.titleLight}>Assignments</Text>
         <Text style={styles.percentLight}>{numberOfAssignment}</Text>
+        <MaterialCommunityIcons name="greater-than" size={20} color="white" />
       </View>
       <View style={styles.navbar}>
-        <Text style={styles.titleLight}>navbar</Text>
+        <AntDesign name="home" size={32} color="white" />
+        <Entypo name="text" size={32} color="white" />
+        <Ionicons name="add-circle" size={36} color="blue" />
+        <Ionicons name="notifications" size={32} color="white" />
+        <AntDesign name="search1" size={32} color="white" onPress={""} />
       </View>
     </View>
   );
@@ -55,13 +82,33 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    flex: 0.1,
+    flex: 0.15,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   module: {
     color: "#fff",
     fontSize: 20,
-    paddingHorizontal: 20,
     paddingVertical: 20,
+    paddingHorizontal: 20,
+    fontWeight: "bold",
+  },
+  icons: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 20,
+  },
+  icon: {
+    color: "#fff",
+    paddingHorizontal: 20,
+  },
+  avatar: {
+    height: 40,
+    width: 40,
+    borderRadius: 50,
+    borderWidth: 1,
   },
   intro: {
     flex: 0.2,
@@ -76,17 +123,26 @@ const styles = StyleSheet.create({
   menu: {
     flex: 0.1,
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     alignItems: "flex-start",
+    marginHorizontal: 20,
+  },
+  menuOptions: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
   options: {
-    fontSize: 16,
-    color: "#fff",
+    fontSize: 18,
+    color: "grey",
     padding: 5,
+    marginHorizontal: 5,
   },
   active: {
+    color: "#fff",
     justifyContent: "center",
     alignItems: "center",
+    fontWeight: "bold",
     borderColor: "#246BFE",
     borderWidth: 2,
     borderRadius: 30,
@@ -136,16 +192,21 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
   },
+  taskSub: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
   percentLight: {
     color: "#fff",
     fontWeight: "bold",
+    paddingHorizontal: 10,
   },
   navbar: {
     flex: 0.1,
-    marginHorizontal: 20,
+    marginHorizontal: 12,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-end",
-    alignSelf: "center",
   },
 });
