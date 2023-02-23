@@ -12,6 +12,11 @@ import Navigation from "./Navigation";
 export default function Profile() {
   return (
     <View style={styles.app}>
+      <View style={styles.top}>
+        
+        <Text>Profile</Text>
+        <Text>Edit</Text>
+      </View>
       <Navigation />
     </View>
   );
