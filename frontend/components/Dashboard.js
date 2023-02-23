@@ -7,6 +7,7 @@ import {
   Entypo,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
+import Navigation from "./Navigation";
 
 export default function Dashboard() {
   const [name, setName] = useState("Tanupam Saha");
@@ -74,13 +75,7 @@ export default function Dashboard() {
           <AntDesign name="right" size={20} color="white" />
         </View>
       </View>
-      <View style={styles.navbar}>
-        <AntDesign name="home" size={32} color="white" onPress={""} />
-        <Entypo name="text" size={32} color="white" />
-        <Ionicons name="add-circle" size={36} color="blue" />
-        <Ionicons name="notifications" size={32} color="white" />
-        <AntDesign name="search1" size={32} color="white" onPress={""} />
-      </View>
+      <Navigation />
     </View>
   );
 }
@@ -218,12 +213,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     paddingHorizontal: 20,
     alignContent: "center",
-  },
-  navbar: {
-    flex: 0.1,
-    marginTop: 10,
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "flex-end",
   },
 });
