@@ -5,14 +5,8 @@ import { Ionicons } from "@expo/vector-icons";
 
 export default function Login() {
   return (
-    <LinearGradient
-      colors={["#1C192D", "#181A20", "#18172A"]}
-      style={styles.app}
-    >
-      <LinearGradient
-        colors={["#1C192D", "#181A20", "#18172A"]}
-        style={styles.signup}
-      >
+    <View style={styles.app}>
+      <View style={styles.signup}>
         <Ionicons
           name="arrow-back-circle-outline"
           size={40}
@@ -26,18 +20,15 @@ export default function Login() {
             login
           </Text>
         </View>
-        <LinearGradient
-          colors={["#1C192D", "#181A20", "#181A21"]}
-          style={styles.input}
-        >
+        <View style={styles.input}>
           <Text style={styles.label}>Registration Number</Text>
           <TextInput style={styles.credential} />
           <Text style={styles.label}>Password</Text>
           <TextInput style={styles.credential} />
           <Text style={styles.btn}>Sign In</Text>
-        </LinearGradient>
-      </LinearGradient>
-    </LinearGradient>
+        </View>
+      </View>
+    </View>
   );
 }
 

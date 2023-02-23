@@ -6,22 +6,17 @@ import {
   AntDesign,
   Entypo,
   MaterialCommunityIcons,
+  Fontisto,
 } from "@expo/vector-icons";
 
-export default function Profile() {
+export default function Settings() {
   const [name, setname] = useState("Tanupam Saha");
   const [email, setemail] = useState("tanupam@lpu.in");
+
   return (
     <View style={styles.app}>
       <View style={styles.top}>
-        <Ionicons
-          name="arrow-back-circle-outline"
-          size={40}
-          color="white"
-          style={styles.back}
-        />
-        <Text style={styles.option}>Profile</Text>
-        <Text style={styles.edit}>Edit</Text>
+        <Fontisto name="close-a" size={16} color="white" style={styles.exit} />
       </View>
       <View style={styles.belowtop}>
         <Image
@@ -30,7 +25,7 @@ export default function Profile() {
         />
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.email}>{email}</Text>
-        <Text style={styles.edit}>Edit</Text>
+        <Text style={styles.edit}>View Profile</Text>
       </View>
     </View>
   );
@@ -45,11 +40,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 20,
     padding: 16,
   },
-  back: {
-    paddingHorizontal: 16,
+  exit: {
+    padding: 8,
+    borderColor: "#246BFE",
+    borderWidth: 1,
+    borderRadius: 50,
+    backgroundColor: "#246BFE",
+    alignContent: "center",
   },
   option: {
     color: "#fff",
@@ -75,11 +74,10 @@ const styles = StyleSheet.create({
     flex: 0.3,
     justifyContent: "center",
     alignItems: "center",
-    margin: 20,
   },
   profile: {
-    height: 150,
-    width: 150,
+    height: 140,
+    width: 140,
     borderWidth: 1,
     borderRadius: 100,
     margin: 10,
@@ -93,6 +91,7 @@ const styles = StyleSheet.create({
   email: {
     color: "#ABFFFE",
     fontSize: 16,
-    paddingVertical: 8,
+    paddingVertical: 10,
+    marginBottom: 5,
   },
 });
