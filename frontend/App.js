@@ -17,8 +17,8 @@ export default function App() {
       >
         {/* <Login /> */}
         {/* <Dashboard /> */}
-        {/* <Profile /> */}
-        <Settings />
+        <Profile />
+        {/* <Settings /> */}
         <SBar style="auto" />
       </LinearGradient>
     </SafeAreaView>

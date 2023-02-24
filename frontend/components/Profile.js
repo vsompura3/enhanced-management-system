@@ -6,6 +6,7 @@ import {
   AntDesign,
   Entypo,
   MaterialCommunityIcons,
+  Octicons,
 } from "@expo/vector-icons";
 
 export default function Profile() {
@@ -32,6 +33,10 @@ export default function Profile() {
         <Text style={styles.email}>{email}</Text>
         <Text style={styles.button}>Edit</Text>
       </View>
+      <View style={styles.options}>
+        <Octicons name="project" size={24} color="white" />
+        <Text>My Projects</Text>
+      </View>
     </View>
   );
 }
@@ -54,6 +59,7 @@ const styles = StyleSheet.create({
   option: {
     color: "#fff",
     fontSize: 20,
+    alignSelf: "center",
     textAlign: "center",
     fontWeight: "bold",
     alignItems: "flex-end",
@@ -70,12 +76,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     alignContent: "center",
     fontWeight: "bold",
+    alignSelf: "center",
   },
   belowtop: {
     flex: 0.3,
     justifyContent: "center",
     alignItems: "center",
-    margin: 20,
+    marginBottom:10,
   },
   profile: {
     height: 150,
@@ -94,5 +101,11 @@ const styles = StyleSheet.create({
     color: "#ABFFFE",
     fontSize: 16,
     paddingVertical: 8,
+  },
+  options: {
+    flex: 0.1,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
