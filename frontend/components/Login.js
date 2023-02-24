@@ -13,6 +13,7 @@ export default function Login() {
           color="white"
           style={styles.back}
         />
+        <Image source={require("../assets/ems-logo.png")} style={styles.logo} />
         <View style={styles.header}>
           <Text style={styles.subheading}>Log In</Text>
           <Text style={styles.tag}>
@@ -43,11 +44,16 @@ const styles = StyleSheet.create({
     paddingVertical: 25,
     paddingHorizontal: 20,
   },
-  header: {
+  logo: {
     flex: 0.3,
+    height: 300,
+    width: 300,
+    alignSelf: "center",
+  },
+  header: {
+    flex: 0.1,
     paddingHorizontal: 28,
-    paddingVertical: 28,
-    padding: 20,
+    paddingVertical: 20,
     justifyContent: "flex-start",
     alignItems: "flex-start",
   },
@@ -56,7 +62,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     textAlign: "center",
     fontWeight: "bold",
-    paddingVertical: 10,
+    paddingVertical: 8,
   },
   emphasis: {
     color: "#fff",

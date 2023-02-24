@@ -15,9 +15,9 @@ export default function App() {
         start={{ x: 0.1, y: 1 }}
         end={{ x: 1, y: 0 }}
       >
-        {/* <Login /> */}
+        <Login />
         {/* <Dashboard /> */}
-        <Profile />
+        {/* <Profile /> */}
         {/* <Settings /> */}
         <SBar style="auto" />
       </LinearGradient>
