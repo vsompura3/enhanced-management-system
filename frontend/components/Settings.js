@@ -45,9 +45,19 @@ export default function Settings() {
       <View style={styles.workspace}>
         <Text style={styles.subheading}>Notification</Text>
         <View style={styles.workContent}>
+          <Image source={require("../assets/dnd.png")} style={styles.icon} />
           <View style={styles.workContentText}>
             <Text style={styles.workContentText}>Do not disturb</Text>
             <Text style={styles.subheading}>Off</Text>
+          </View>
+        </View>
+      </View>
+      <View style={styles.workspace}>
+        <Text style={styles.subheading}>Manage</Text>
+        <View style={styles.workContent}>
+          <View style={styles.workContentText}>
+            <Text style={styles.workContentText}></Text>
+            <Text style={styles.subheading}></Text>
           </View>
         </View>
       </View>
@@ -157,10 +167,19 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     borderWidth: 1,
   },
+  icon: {
+    height: 40,
+    width: 40,
+    borderRadius: 50,
+    borderWidth: 1,
+    backgroundColor: "#A06AFA",
+    padding: 5,
+  },
   logout: {
-    flex: 0.1,
+    flex: 0.07,
     backgroundColor: "#FF968E",
     justifyContent: "center",
+    alignSelf: "center",
     alignItems: "center",
     width: 370,
     margin: 10,
