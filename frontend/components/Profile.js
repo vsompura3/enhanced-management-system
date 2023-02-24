@@ -21,7 +21,7 @@ export default function Profile() {
           style={styles.back}
         />
         <Text style={styles.option}>Profile</Text>
-        <Text style={styles.edit}>Edit</Text>
+        <Text style={styles.button}>Edit</Text>
       </View>
       <View style={styles.belowtop}>
         <Image
@@ -30,7 +30,7 @@ export default function Profile() {
         />
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.email}>{email}</Text>
-        <Text style={styles.edit}>Edit</Text>
+        <Text style={styles.button}>Edit</Text>
       </View>
     </View>
   );
@@ -58,13 +58,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     alignItems: "flex-end",
   },
-  edit: {
+  button: {
     color: "#fff",
     fontSize: 16,
     borderColor: "#2362E1",
     borderWidth: 3,
     borderRadius: 28,
-    paddingVertical: 12,
+    paddingVertical: 8,
     paddingHorizontal: 20,
     width: "auto",
     textAlign: "center",
