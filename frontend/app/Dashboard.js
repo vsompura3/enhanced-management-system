@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import { useState } from "react";
-import { LinearGradient } from "expo-linear-gradient";
+
 import {
   Ionicons,
   AntDesign,
@@ -8,6 +8,7 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import Navigation from "./Navigation";
+import { useRouter } from "expo-router";
 
 export default function Dashboard() {
   const [name, setName] = useState("Tanupam Saha");
@@ -18,6 +19,8 @@ export default function Dashboard() {
   const [attendance, setAttendance] = useState("100");
   const [numberOfAssignment, setNumberOfAssignment] = useState("4");
   const [numberOfExams, setNumberOfExams] = useState("7");
+  const router = useRouter();
+
   return (
     <View style={styles.app}>
       <View style={styles.header}>
@@ -32,6 +35,7 @@ export default function Dashboard() {
           <Image
             source={require("../assets/avatar.png")}
             style={styles.avatar}
+            onMagicTap={() => router}
           />
         </View>
       </View>
@@ -75,6 +79,7 @@ export default function Dashboard() {
           <AntDesign name="right" size={20} color="white" />
         </View>
       </View>
+
       <Navigation />
     </View>
   );

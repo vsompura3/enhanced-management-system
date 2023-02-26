@@ -1,9 +1,16 @@
 import { StatusBar as SBar } from "expo-status-bar";
-import { StyleSheet, SafeAreaView, View, StatusBar } from "react-native";
-import Login from "./components/Login";
-import Profile from "./components/Profile";
-import Settings from "./components/Settings";
-import Dashboard from "./components/Dashboard";
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  StatusBar,
+  ImageBackground,
+} from "react-native";
+import Login from "./app/Login";
+import Profile from "./app/Profile";
+import Settings from "./app/Settings";
+import Dashboard from "./app/Dashboard";
+import Onboarding from "./app/Onboarding";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
@@ -15,11 +22,17 @@ export default function App() {
         start={{ x: 0.1, y: 1 }}
         end={{ x: 1, y: 0 }}
       >
-        <Login />
-        {/* <Dashboard /> */}
-        {/* <Profile /> */}
-        {/* <Settings /> */}
-        <SBar style="auto" />
+        <ImageBackground
+          source={require("./assets/gradient.png")}
+          style={[styles.linearGradient]}
+        >
+          <Login />
+          {/* <Dashboard /> */}
+          {/* <Onboarding /> */}
+          {/* <Profile /> */}
+          {/* <Settings /> */}
+          <SBar style="auto" />
+        </ImageBackground>
       </LinearGradient>
     </SafeAreaView>
   );
@@ -33,5 +46,7 @@ const styles = StyleSheet.create({
   linearGradient: {
     flex: 1,
     height: "100%",
+    resizeMode: "cover",
+    justifyContent: "center",
   },
 });
