@@ -22,8 +22,7 @@ export default function Navigation() {
 
 const styles = StyleSheet.create({
   navbar: {
-    flex: 0.1,
-    marginTop: 10,
+    flex: 0.06,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-end",

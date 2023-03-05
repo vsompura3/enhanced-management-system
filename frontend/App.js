@@ -22,8 +22,8 @@ export default function App() {
         start={{ x: 0.017, y: 0 }}
         end={{ x: 0, y: 1 }}
       >
-        <Login />
-        {/* <Dashboard /> */}
+        {/* <Login /> */}
+        <Dashboard />
         {/* <Onboarding /> */}
         {/* <Profile /> */}
         {/* <Settings /> */}

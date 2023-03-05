@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Image,
+  ScrollView,
+} from "react-native";
 import { useState } from "react";
 
 import {
@@ -6,6 +13,7 @@ import {
   AntDesign,
   Entypo,
   MaterialCommunityIcons,
+  MaterialIcons,
 } from "@expo/vector-icons";
 import Navigation from "./Navigation";
 import { useRouter } from "expo-router";
@@ -19,66 +27,133 @@ export default function Dashboard() {
   const [attendance, setAttendance] = useState("100");
   const [numberOfAssignment, setNumberOfAssignment] = useState("4");
   const [numberOfExams, setNumberOfExams] = useState("7");
-
+  const [time, settime] = useState("Evening");
+  const [attendanceStatus, setattendanceStatus] = useState("Present");
+  const [classTime, setclassTime] = useState("10:00AM");
   return (
     <View style={styles.app}>
-      <View style={styles.header}>
-        <Text style={styles.module}>Dashboard</Text>
-        <View style={styles.icons}>
-          <Ionicons
-            name="chatbubble-ellipses-outline"
-            size={28}
-            color="white"
-            style={styles.icon}
-          />
-          <Image
-            source={require("../assets/avatar.png")}
-            style={styles.avatar}
-            onMagicTap={() => router}
-          />
+      <ScrollView style={styles.app}>
+        <View style={styles.header}>
+          <Text style={styles.module}>Dashboard</Text>
+          <View style={styles.icons}>
+            <MaterialIcons
+              name="message"
+              size={32}
+              color="white"
+              style={styles.icon}
+            />
+            <Image
+              source={require("../assets/avatar.png")}
+              style={styles.avatar}
+              onMagicTap={() => router}
+            />
+          </View>
         </View>
-      </View>
-      <View style={styles.intro}>
-        <Text style={styles.welcome}>Hello,</Text>
-        <Text style={styles.welcome}>{name}</Text>
-      </View>
-      <View style={styles.menu}>
-        <View style={styles.menuOptions}>
-          <Text style={[styles.options, styles.active]}>Overview</Text>
-          <Text style={styles.options}>Timetable</Text>
+        <View style={styles.intro}>
+          <Text style={styles.greet}>
+            Good {time}, {name}
+          </Text>
         </View>
-        <Ionicons name="ios-options-sharp" size={28} color="white" />
-      </View>
-      <View style={styles.events}>
-        <Text style={styles.titleDark}>Upcoming class </Text>
-        <Text style={styles.details}>{course}</Text>
-        <Text style={styles.details}>{roomNo}</Text>
-        <Text style={[styles.details, styles.percent]}>Current Attendance</Text>
-        <View style={styles.snap}>
-          <Text>Progress bar as in attendance</Text>
-          <Text style={styles.percentDark}>{attendance}%</Text>
-        </View>
-      </View>
-      <View style={styles.task}>
-        <Image
-          source={require("../assets/attendance.png")}
-          style={styles.taskIcon}
-        />
-        <Text style={styles.titleLight}>Assignments</Text>
-        <View style={styles.taskSub}>
-          <Text style={styles.percentLight}>{numberOfAssignment}</Text>
-          <AntDesign name="right" size={20} color="white" />
-        </View>
-      </View>
-      <View style={styles.task}>
-        <Image source={require("../assets/exam.png")} style={styles.taskIcon} />
-        <Text style={styles.titleLight}>Exams</Text>
-        <View style={styles.taskSub}>
-          <Text style={styles.percentLight}>{numberOfExams}</Text>
-          <AntDesign name="right" size={20} color="white" />
-        </View>
-      </View>
 
+        <View style={styles.events}>
+          <Text style={styles.titleDark}>Ongoing Class </Text>
+          <Text style={styles.details}>{course}</Text>
+          <Text style={styles.details}>{roomNo}</Text>
+          <Text style={[styles.details, styles.percent]}>
+            Current Attendance
+          </Text>
+          <View style={styles.snap}>
+            <Text>{attendanceStatus}</Text>
+            <Text style={styles.percentDark}>{attendance}%</Text>
+          </View>
+        </View>
+        <View style={styles.tasks}>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/timetable.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>Timetable</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/assignment.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>Assignments</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/attendance.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>Attendance</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/attendance.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>Makeup</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/kya.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>Know your authority</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/exam.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>Assignment Marks</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/attendance.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>Pending Assignment</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/kya.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>View Marks</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/exam.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>View Grade</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/attendance.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>Exams Available</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/kya.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>View Syllabus</Text>
+          </View>
+          <View style={styles.task}>
+            <Image
+              source={require("../assets/exam.png")}
+              style={styles.taskIcon}
+            />
+            <Text style={styles.titleLight}>Assignment Marks</Text>
+          </View>
+        </View>
+      </ScrollView>
       <Navigation />
     </View>
   );
@@ -89,7 +164,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    flex: 0.15,
+    flex: 0.1,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -97,7 +172,7 @@ const styles = StyleSheet.create({
   module: {
     color: "#fff",
     fontSize: 20,
-    paddingVertical: 20,
+    paddingVertical: 16,
     paddingHorizontal: 20,
     fontWeight: "bold",
   },
@@ -117,18 +192,26 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     borderWidth: 1,
   },
+  greet: {
+    color: "#fff",
+    fontSize: 24,
+    fontWeight: "bold",
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+  },
   intro: {
-    flex: 0.2,
+    flex: 0.15,
     overflow: "hidden",
+    flexDirection: "row",
   },
   welcome: {
     color: "#fff",
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: "bold",
     paddingHorizontal: 20,
   },
   menu: {
-    flex: 0.1,
+    flex: 0.06,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
@@ -159,20 +242,24 @@ const styles = StyleSheet.create({
   },
   events: {
     flex: 0.2,
-    backgroundColor: "#A9ABFE",
-    borderColor: "#A9ABFE",
+    backgroundColor: "#8c44f7",
+    borderColor: "#8c44f7",
     borderWidth: 2,
     borderRadius: 24,
     margin: 16,
-    padding: 20,
+    padding: 16,
     justifyContent: "flex-start",
   },
   titleDark: {
     fontWeight: "bold",
     fontSize: 20,
+    textAlign: "center",
+    marginBottom: 10,
   },
   details: {
     fontSize: 16,
+    color: "white",
+    fontWeight: "bold",
   },
   snap: {
     flexDirection: "row",
@@ -182,28 +269,36 @@ const styles = StyleSheet.create({
   percentDark: {
     fontWeight: "bold",
   },
-  task: {
-    flex: 0.1,
-    backgroundColor: "#262A34",
+  tasks: {
+    flex: 0.5,
+    justifyContent: "center",
+    alignItems: "center",
     flexDirection: "row",
-    justifyContent: "space-around",
+    flexWrap: "wrap",
+  },
+  task: {
+    backgroundColor: "#262A34",
+    justifyContent: "center",
     alignItems: "center",
     borderWidth: 1,
     borderRadius: 16,
     borderColor: "#262A34",
-    marginHorizontal: 16,
-    marginVertical: 8,
+    marginHorizontal: 12,
+    marginVertical: 12,
     padding: 8,
+    width: 110,
+    height: 110,
   },
   taskIcon: {
     height: 40,
     width: 40,
+    margin: 10,
   },
   titleLight: {
     color: "#fff",
     fontWeight: "bold",
-    fontSize: 20,
-    width: 150,
+    fontSize: 12,
+    textAlign: "center",
   },
   taskSub: {
     flexDirection: "row",
@@ -212,10 +307,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   percentLight: {
-    fontSize: 20,
+    fontSize: 12,
     color: "#fff",
     fontWeight: "bold",
-    paddingHorizontal: 20,
     alignContent: "center",
   },
 });
