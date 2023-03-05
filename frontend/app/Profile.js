@@ -12,6 +12,10 @@ import {
 export default function Profile() {
   const [name, setname] = useState("Tanupam Saha");
   const [email, setemail] = useState("tanupam@lpu.in");
+  const [regno, setregno] = useState("12200097");
+  const [section, setsection] = useState("D2210");
+  const [course, setcourse] = useState("P164 - NN1 - MCA");
+
   return (
     <View style={styles.app}>
       <View style={styles.top}>
@@ -22,7 +26,7 @@ export default function Profile() {
           style={styles.back}
         />
         <Text style={styles.option}>Profile</Text>
-        <Text style={styles.button}>Edit</Text>
+        <Ionicons name="ios-settings" size={32} color="white" />
       </View>
       <View style={styles.belowtop}>
         <Image
@@ -31,12 +35,12 @@ export default function Profile() {
         />
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.email}>{email}</Text>
-        <Text style={styles.button}>Edit</Text>
+        <Text style={styles.info}>{regno}</Text>
+        <Text style={styles.info}>{section}</Text>
+        <Text style={styles.info}>{course}</Text>
+        {/* <Text style={styles.button}>Edit</Text> */}
       </View>
-      <View style={styles.options}>
-        <Octicons name="project" size={24} color="white" />
-        <Text>My Projects</Text>
-      </View>
+      <View style={styles.options}></View>
     </View>
   );
 }
@@ -50,19 +54,17 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 24,
     padding: 16,
   },
-  back: {
-    paddingHorizontal: 16,
-  },
+
   option: {
     color: "#fff",
     fontSize: 20,
     alignSelf: "center",
     textAlign: "center",
     fontWeight: "bold",
-    alignItems: "flex-end",
+    textAlign: "center",
   },
   button: {
     color: "#fff",
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
     flex: 0.3,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom:10,
+    marginBottom: 10,
   },
   profile: {
     height: 150,
@@ -107,5 +109,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+  },
+  info: {
+    color: "white",
+    fontSize: 20,
+    paddingVertical: 4,
+    paddingHorizontal: 20,
+    fontWeight: "bold",
   },
 });

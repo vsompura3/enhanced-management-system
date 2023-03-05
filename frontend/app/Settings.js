@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
   },
   logout: {
     flex: 0.07,
-    backgroundColor: "#FF968E",
+    backgroundColor: "red",
     justifyContent: "center",
     alignSelf: "center",
     alignItems: "center",

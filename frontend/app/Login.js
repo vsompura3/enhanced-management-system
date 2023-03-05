@@ -32,7 +32,7 @@ export default function Login() {
           <Text style={styles.label}>Registration Number</Text>
           <TextInput style={styles.credential} />
           <Text style={styles.label}>Password</Text>
-          <TextInput style={styles.credential} />
+          <TextInput style={styles.credential} passwordVisible={false} />
           <Pressable onPress={onPress}>
             <Text style={styles.btn}>Log In</Text>
           </Pressable>

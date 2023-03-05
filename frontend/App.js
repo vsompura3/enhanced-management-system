@@ -17,15 +17,14 @@ export default function App() {
   return (
     <SafeAreaView style={styles.screen}>
       <LinearGradient
-        colors={["#181321", "rgba(8,9,9,255)", "rgba(8,9,9,255)", "#0a0a0b"]}
+        colors={["#181321", "rgba(8,9,9,255)", "#0a0a0b"]}
         style={[styles.linearGradient]}
-        start={{ x: 0.017, y: 0 }}
-        end={{ x: 0, y: 1 }}
+        start={{ x: 0.01, y: 0.1 }}
       >
         {/* <Login /> */}
-        <Dashboard />
+        {/* <Dashboard /> */}
         {/* <Onboarding /> */}
-        {/* <Profile /> */}
+        <Profile />
         {/* <Settings /> */}
         <SBar style="auto" />
       </LinearGradient>

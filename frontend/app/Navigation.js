@@ -11,11 +11,11 @@ import {
 export default function Navigation() {
   return (
     <View style={styles.navbar}>
-      <AntDesign name="home" size={32} color="white" onPress={""} />
+      <AntDesign name="home" size={32} color="white" />
       <Entypo name="text" size={32} color="white" />
-      <Ionicons name="add-circle" size={36} color="blue" />
+      <Ionicons name="add-circle" size={36} color="#8c44f7" />
       <Ionicons name="notifications" size={32} color="white" />
-      <AntDesign name="search1" size={32} color="white" onPress={""} />
+      <AntDesign name="search1" size={32} color="white" />
     </View>
   );
 }
