@@ -17,22 +17,17 @@ export default function App() {
   return (
     <SafeAreaView style={styles.screen}>
       <LinearGradient
-        colors={["#181927", "#1C192D", "#19182C"]}
+        colors={["#181321", "rgba(8,9,9,255)", "rgba(8,9,9,255)", "#0a0a0b"]}
         style={[styles.linearGradient]}
-        start={{ x: 0.1, y: 1 }}
-        end={{ x: 1, y: 0 }}
+        start={{ x: 0.017, y: 0 }}
+        end={{ x: 0, y: 1 }}
       >
-        <ImageBackground
-          source={require("./assets/gradient.png")}
-          style={[styles.linearGradient]}
-        >
-          <Login />
-          {/* <Dashboard /> */}
-          {/* <Onboarding /> */}
-          {/* <Profile /> */}
-          {/* <Settings /> */}
-          <SBar style="auto" />
-        </ImageBackground>
+        <Login />
+        {/* <Dashboard /> */}
+        {/* <Onboarding /> */}
+        {/* <Profile /> */}
+        {/* <Settings /> */}
+        <SBar style="auto" />
       </LinearGradient>
     </SafeAreaView>
   );

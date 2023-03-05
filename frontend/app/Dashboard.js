@@ -19,7 +19,6 @@ export default function Dashboard() {
   const [attendance, setAttendance] = useState("100");
   const [numberOfAssignment, setNumberOfAssignment] = useState("4");
   const [numberOfExams, setNumberOfExams] = useState("7");
-  const router = useRouter();
 
   return (
     <View style={styles.app}>
