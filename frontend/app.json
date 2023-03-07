@@ -1,33 +1,39 @@
 {
   "expo": {
     "name": "ems",
-    "slug": "ems",
+    "slug": "enhanced-management-system",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/ems-logo.png",
+    "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/ems-logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#18172A"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tanupam.ems"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/ems-logo.png",
+        "backgroundColor": "#18172A"
+      },
+      "package": "com.tanupam.ems"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/ems-logo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8b6a1ed7-ffe4-4f0c-9e84-50c3ff8cabfc"
+      }
+    },
+    "owner": "vsompura3"
   }
 }
