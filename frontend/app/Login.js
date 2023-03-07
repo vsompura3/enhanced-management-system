@@ -1,45 +1,53 @@
-import { StatusBar } from "expo-status-bar";
-import { Ionicons } from "@expo/vector-icons";
-import { useRouter, Link, Redirect } from "expo-router";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Image,
-  Pressable,
-} from "react-native";
+import { Ionicons } from '@expo/vector-icons'
+import { Link, Redirect, useRouter } from 'expo-router'
+import { StatusBar } from 'expo-status-bar'
+import { Image, Platform, Pressable, StyleSheet, View } from 'react-native'
+import { Button, Text, TextInput } from 'react-native-paper'
 
 export default function Login() {
-  const { onPress, title = "Submit" } = [];
+  const { onPress, title = 'Submit' } = []
   return (
     <View style={styles.app}>
       <View style={styles.signup}>
-        <Ionicons
+        {/* <Ionicons
           name="arrow-back-circle-outline"
           size={40}
           color="white"
           style={styles.back}
-        />
-        <Image source={require("../assets/ems-logo.png")} style={styles.logo} />
-        <View style={styles.header}>
-          <Text style={styles.subheading}>Log in to EMS</Text>
-          <Text style={styles.tag}>
-            Use your <Text style={styles.emphasis}>UMS Credentials</Text>
-          </Text>
-        </View>
+        /> */}
+        <Image source={require('../assets/ems-logo.png')} style={styles.logo} />
+        {/* <View style={styles.header}>
+          <Text style={styles.subheading}>Login</Text>
+        </View> */}
         <View style={styles.input}>
-          <Text style={styles.label}>Registration Number</Text>
-          <TextInput style={styles.credential} />
-          <Text style={styles.label}>Password</Text>
-          <TextInput style={styles.credential} passwordVisible={false} />
-          <Pressable onPress={onPress}>
-            <Text style={styles.btn}>Log In</Text>
-          </Pressable>
+          <TextInput
+            mode="outlined"
+            label={'Registration Number'}
+            activeOutlineColor="#915edb"
+            style={styles.credential}
+          />
+
+          <TextInput
+            mode="outlined"
+            label={'Password'}
+            secureTextEntry
+            right={<TextInput.Icon icon="eye" />}
+            activeOutlineColor="#8c44f7"
+            style={styles.credential}
+          />
         </View>
+        <Button
+          mode="contained"
+          textColor="#fff"
+          buttonColor="#8c44f7"
+          onPress={() => console.log('Pressed')}
+          style={styles.btn}
+        >
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Log In</Text>
+        </Button>
       </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -48,81 +56,62 @@ const styles = StyleSheet.create({
   },
   signup: {
     flex: 1,
+    paddingTop: Platform.OS === 'android' ? 120 : 100,
   },
   back: {
     paddingVertical: 25,
     paddingHorizontal: 20,
   },
   logo: {
-    flex: 0.2,
-    height: 150,
-    width: 110,
-    alignSelf: "center",
+    height: 120,
+    width: 120,
+    alignSelf: 'center',
   },
   header: {
-    flex: 0.1,
-    paddingHorizontal: 28,
-    paddingVertical: 20,
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-  },
-  brand: {
-    fontWeight: "bolder",
-    color: "#8c44f7",
-    padding: 1,
+    marginTop: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   subheading: {
-    fontSize: 32,
-    color: "#fff",
-    textAlign: "center",
-    paddingVertical: 8,
-    fontWeight: "bold",
+    fontSize: 28,
+    color: '#fff',
+    fontWeight: 'bold',
   },
   emphasis: {
-    color: "#fff",
-    fontWeight: "bold",
+    color: '#fff',
+    fontWeight: 'bold',
   },
   tag: {
     fontSize: 18,
-    color: "grey",
-    textAlign: "center",
+    color: 'grey',
+    textAlign: 'center',
   },
   input: {
-    flex: 0.4,
-    paddingHorizontal: 36,
-    paddingVertical: 28,
-    justifyContent: "center",
-    alignContent: "center",
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    marginTop: 32,
+    justifyContent: 'center',
+    alignContent: 'center',
   },
   label: {
-    color: "white",
+    color: 'white',
     fontSize: 16,
     marginVertical: 10,
-    fontWeight: "bold",
-    alignItems: "center",
-    justifyContent: "flex-start",
+    fontWeight: 'bold',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
   credential: {
-    width: 336,
-    borderWidth: 1,
-    borderColor: "transparent",
-    borderColor: "#8c44f7",
     borderRadius: 8,
-    color: "#fff",
-    backgroundColor: "#18181f",
-    padding: 8,
+    color: '#fff',
+    backgroundColor: '#18181f',
+    marginVertical: 4,
   },
   btn: {
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    backgroundColor: "#8c44f7",
-    color: "#fff",
-    borderRadius: 8,
-    marginTop: 28,
-    padding: 10,
+    marginTop: 18,
+    borderRadius: 6,
     fontSize: 20,
-    fontWeight: "bold",
-    height: 48,
+    paddingVertical: 2,
+    marginHorizontal: 20,
   },
-});
+})

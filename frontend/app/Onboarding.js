@@ -1,21 +1,19 @@
-import { StyleSheet, Text, View, TextInput, Image } from "react-native";
-import { useState } from "react";
-import { LinearGradient } from "expo-linear-gradient";
 import {
-  Ionicons,
   AntDesign,
   Entypo,
+  Ionicons,
   MaterialCommunityIcons,
-} from "@expo/vector-icons";
+} from '@expo/vector-icons'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useState } from 'react'
+import { Image, StyleSheet, Text, TextInput, View } from 'react-native'
 
 export default function Onboarding() {
   return (
     <View style={styles.app}>
-      <View style={styles.image}>
-        
-      </View>
+      <View style={styles.image}></View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -24,11 +22,11 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 0.4,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   img: {
     height: 300,
     width: 300,
   },
-});
+})

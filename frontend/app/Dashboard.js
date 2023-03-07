@@ -1,36 +1,36 @@
+import { useState } from 'react'
 import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
   Image,
   ScrollView,
-} from "react-native";
-import { useState } from "react";
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native'
 
 import {
-  Ionicons,
   AntDesign,
   Entypo,
+  FontAwesome,
+  Ionicons,
   MaterialCommunityIcons,
   MaterialIcons,
-  FontAwesome,
-} from "@expo/vector-icons";
-import Navigation from "./Navigation";
-import { useRouter } from "expo-router";
+} from '@expo/vector-icons'
+import { useRouter } from 'expo-router'
+import Navigation from './Navigation'
 
 export default function Dashboard() {
-  const [name, setName] = useState("Tanupam Saha");
+  const [name, setName] = useState('Tanupam Saha')
   const [course, setCourse] = useState(
-    "CAP770 - Data Structures and Algorithms"
-  );
-  const [roomNo, setRoomNo] = useState("36 - 802A");
-  const [attendance, setAttendance] = useState("100");
-  const [numberOfAssignment, setNumberOfAssignment] = useState("4");
-  const [numberOfExams, setNumberOfExams] = useState("7");
-  const [time, settime] = useState("Evening");
-  const [attendanceStatus, setattendanceStatus] = useState("Present");
-  const [classTime, setclassTime] = useState("10:00AM");
+    'CAP770 - Data Structures and Algorithms',
+  )
+  const [roomNo, setRoomNo] = useState('36 - 802A')
+  const [attendance, setAttendance] = useState('100')
+  const [numberOfAssignment, setNumberOfAssignment] = useState('4')
+  const [numberOfExams, setNumberOfExams] = useState('7')
+  const [time, settime] = useState('Evening')
+  const [attendanceStatus, setattendanceStatus] = useState('Present')
+  const [classTime, setclassTime] = useState('10:00AM')
   return (
     <View style={styles.app}>
       <ScrollView style={styles.app}>
@@ -44,7 +44,7 @@ export default function Dashboard() {
               style={styles.icon}
             />
             <Image
-              source={require("../assets/avatar.png")}
+              source={require('../assets/avatar.png')}
               style={styles.avatar}
               onMagicTap={() => router}
             />
@@ -88,84 +88,84 @@ export default function Dashboard() {
         <View style={styles.tasks}>
           <View style={styles.task}>
             <Image
-              source={require("../assets/timetable.png")}
+              source={require('../assets/timetable.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>Timetable</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/assignment.png")}
+              source={require('../assets/assignment.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>Assignments</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/attendance.png")}
+              source={require('../assets/attendance.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>Attendance</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/attendance.png")}
+              source={require('../assets/attendance.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>Makeup</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/kya.png")}
+              source={require('../assets/kya.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>Know your authority</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/exam.png")}
+              source={require('../assets/exam.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>Assignment Marks</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/attendance.png")}
+              source={require('../assets/attendance.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>Pending Assignment</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/kya.png")}
+              source={require('../assets/kya.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>View Marks</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/exam.png")}
+              source={require('../assets/exam.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>View Grade</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/attendance.png")}
+              source={require('../assets/attendance.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>Exams Available</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/kya.png")}
+              source={require('../assets/kya.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>View Syllabus</Text>
           </View>
           <View style={styles.task}>
             <Image
-              source={require("../assets/exam.png")}
+              source={require('../assets/exam.png')}
               style={styles.taskIcon}
             />
             <Text style={styles.titleLight}>Assignment Marks</Text>
@@ -174,7 +174,7 @@ export default function Dashboard() {
       </ScrollView>
       <Navigation />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -183,25 +183,25 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 0.1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   module: {
-    color: "#fff",
+    color: '#fff',
     fontSize: 20,
     paddingVertical: 12,
     paddingHorizontal: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   icons: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     padding: 16,
   },
   icon: {
-    color: "#fff",
+    color: '#fff',
     paddingHorizontal: 16,
   },
   avatar: {
@@ -211,99 +211,99 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   greet: {
-    color: "#fff",
+    color: '#fff',
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
   intro: {
     flex: 0.15,
-    overflow: "hidden",
-    flexDirection: "row",
+    overflow: 'hidden',
+    flexDirection: 'row',
   },
   welcome: {
-    color: "#fff",
+    color: '#fff',
     fontSize: 28,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     paddingHorizontal: 20,
   },
   menu: {
     flex: 0.06,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
     marginHorizontal: 20,
   },
   menuOptions: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   options: {
     fontSize: 18,
-    color: "grey",
+    color: 'grey',
     padding: 5,
     marginHorizontal: 5,
   },
   events: {
     flex: 0.2,
-    backgroundColor: "#8c44f7",
-    borderColor: "#8c44f7",
+    backgroundColor: '#8c44f7',
+    borderColor: '#8c44f7',
     borderWidth: 2,
     borderRadius: 24,
     margin: 16,
     padding: 8,
-    justifyContent: "flex-start",
+    justifyContent: 'flex-start',
   },
   titleDark: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 20,
-    textAlign: "center",
+    textAlign: 'center',
     marginBottom: 10,
   },
   nav: {
-    justifyContent: "space-between",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   details: {
     fontSize: 16,
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   snap: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   status: {
-    backgroundColor: "#262b34",
-    color: "white",
+    backgroundColor: '#262b34',
+    color: 'white',
     width: 60,
     height: 30,
-    textAlign: "center",
-    alignSelf: "center",
+    textAlign: 'center',
+    alignSelf: 'center',
   },
   percentDark: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   tasks: {
     flex: 0.5,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    flexWrap: "wrap",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   task: {
-    backgroundColor: "#262A34",
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: '#262A34',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderWidth: 1,
     borderRadius: 16,
-    borderColor: "#262A34",
-    marginHorizontal: 12,
+    borderColor: '#262A34',
+    marginHorizontal: 8,
     marginVertical: 12,
     padding: 8,
     width: 110,
@@ -315,21 +315,21 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   titleLight: {
-    color: "#fff",
-    fontWeight: "bold",
+    color: '#fff',
+    fontWeight: 'bold',
     fontSize: 12,
-    textAlign: "center",
+    textAlign: 'center',
   },
   taskSub: {
-    flexDirection: "row",
+    flexDirection: 'row',
     width: 50,
-    justifyContent: "space-between",
-    alignItems: "center",
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   percentLight: {
     fontSize: 12,
-    color: "#fff",
-    fontWeight: "bold",
-    alignContent: "center",
+    color: '#fff',
+    fontWeight: 'bold',
+    alignContent: 'center',
   },
-});
+})
