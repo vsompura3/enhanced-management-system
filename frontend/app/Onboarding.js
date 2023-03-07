@@ -11,7 +11,9 @@ import {
 export default function Onboarding() {
   return (
     <View style={styles.app}>
-      <View style={styles.image}></View>
+      <View style={styles.image}>
+        
+      </View>
     </View>
   );
 }

@@ -14,6 +14,7 @@ import {
   Entypo,
   MaterialCommunityIcons,
   MaterialIcons,
+  FontAwesome,
 } from "@expo/vector-icons";
 import Navigation from "./Navigation";
 import { useRouter } from "expo-router";
@@ -56,14 +57,31 @@ export default function Dashboard() {
         </View>
 
         <View style={styles.events}>
-          <Text style={styles.titleDark}>Ongoing Class </Text>
-          <Text style={styles.details}>{course}</Text>
-          <Text style={styles.details}>{roomNo}</Text>
+          <Text style={styles.titleDark}>Ongoing Class</Text>
+          <View style={styles.nav}>
+            <FontAwesome
+              name="chevron-circle-left"
+              size={20}
+              color="white"
+              style={{ paddingHorizontal: 4 }}
+            />
+            <View>
+              <Text style={styles.details}>{course}</Text>
+              <Text style={styles.details}>{roomNo}</Text>
+            </View>
+            <FontAwesome
+              name="chevron-circle-right"
+              size={20}
+              color="white"
+              style={{ paddingHorizontal: 4 }}
+            />
+          </View>
           <Text style={[styles.details, styles.percent]}>
             Current Attendance
           </Text>
+
           <View style={styles.snap}>
-            <Text>{attendanceStatus}</Text>
+            <Text style={styles.status}>{attendanceStatus}</Text>
             <Text style={styles.percentDark}>{attendance}%</Text>
           </View>
         </View>
@@ -172,19 +190,19 @@ const styles = StyleSheet.create({
   module: {
     color: "#fff",
     fontSize: 20,
-    paddingVertical: 16,
-    paddingHorizontal: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
     fontWeight: "bold",
   },
   icons: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 20,
+    padding: 16,
   },
   icon: {
     color: "#fff",
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
   },
   avatar: {
     height: 40,
@@ -196,8 +214,8 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 24,
     fontWeight: "bold",
-    paddingHorizontal: 20,
-    paddingVertical: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
   },
   intro: {
     flex: 0.15,
@@ -228,18 +246,6 @@ const styles = StyleSheet.create({
     padding: 5,
     marginHorizontal: 5,
   },
-  active: {
-    color: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-    fontWeight: "bold",
-    borderColor: "#246BFE",
-    borderWidth: 2,
-    borderRadius: 30,
-    backgroundColor: "#246BFE",
-    height: 36,
-    paddingHorizontal: 20,
-  },
   events: {
     flex: 0.2,
     backgroundColor: "#8c44f7",
@@ -247,7 +253,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 24,
     margin: 16,
-    padding: 16,
+    padding: 8,
     justifyContent: "flex-start",
   },
   titleDark: {
@@ -256,15 +262,29 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 10,
   },
+  nav: {
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
+  },
   details: {
     fontSize: 16,
     color: "white",
     fontWeight: "bold",
+    textAlign: "center",
   },
   snap: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  status: {
+    backgroundColor: "#262b34",
+    color: "white",
+    width: 60,
+    height: 30,
+    textAlign: "center",
+    alignSelf: "center",
   },
   percentDark: {
     fontWeight: "bold",

@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     flex: 0.2,
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 110,
     alignSelf: "center",
   },
   header: {

@@ -21,10 +21,10 @@ export default function App() {
         style={[styles.linearGradient]}
         start={{ x: 0.01, y: 0.1 }}
       >
-        {/* <Login /> */}
+        <Login />
         {/* <Dashboard /> */}
         {/* <Onboarding /> */}
-        <Profile />
+        {/* <Profile /> */}
         {/* <Settings /> */}
         <SBar style="auto" />
       </LinearGradient>
