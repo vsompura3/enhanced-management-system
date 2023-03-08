@@ -4,17 +4,17 @@ import {
   Ionicons,
   MaterialCommunityIcons,
   Octicons,
-} from '@expo/vector-icons'
-import { LinearGradient } from 'expo-linear-gradient'
-import { useState } from 'react'
-import { Image, StyleSheet, Text, TextInput, View } from 'react-native'
+} from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
+import { useState } from "react";
+import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function Profile() {
-  const [name, setname] = useState('Tanupam Saha')
-  const [email, setemail] = useState('tanupam@lpu.in')
-  const [regno, setregno] = useState('12200097')
-  const [section, setsection] = useState('D2210')
-  const [course, setcourse] = useState('P164 - NN1 - MCA')
+  const [name, setname] = useState("Tanupam Saha");
+  const [email, setemail] = useState("tanupam@lpu.in");
+  const [regno, setregno] = useState("12200097");
+  const [section, setsection] = useState("D2210");
+  const [course, setcourse] = useState("P164 - NN1 - MCA");
 
   return (
     <View style={styles.app}>
@@ -30,7 +30,7 @@ export default function Profile() {
       </View>
       <View style={styles.belowtop}>
         <Image
-          source={require('../assets/avatar.png')}
+          source={require("../assets/avatar.png")}
           style={styles.profile}
         />
         <Text style={styles.name}>{name}</Text>
@@ -42,7 +42,7 @@ export default function Profile() {
       </View>
       <View style={styles.options}></View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -51,40 +51,38 @@ const styles = StyleSheet.create({
   },
   top: {
     flex: 0.1,
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent: "space-between",
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 24,
-    padding: 16,
+    paddingBottom: 16,
   },
 
   option: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 20,
-    alignSelf: 'center',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    textAlign: 'center',
+    alignSelf: "center",
+    textAlign: "center",
+    fontWeight: "bold",
+    textAlign: "center",
   },
   button: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 16,
-    borderColor: '#2362E1',
+    borderColor: "#2362E1",
     borderWidth: 3,
     borderRadius: 28,
-    paddingVertical: 8,
-    paddingHorizontal: 20,
-    width: 'auto',
-    textAlign: 'center',
-    alignContent: 'center',
-    fontWeight: 'bold',
-    alignSelf: 'center',
+    width: "auto",
+    textAlign: "center",
+    alignContent: "center",
+    fontWeight: "bold",
+    alignSelf: "center",
   },
   belowtop: {
     flex: 0.3,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 10,
   },
   profile: {
     height: 150,
@@ -94,27 +92,27 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   name: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 32,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     paddingHorizontal: 20,
   },
   email: {
-    color: '#ABFFFE',
+    color: "#ABFFFE",
     fontSize: 16,
     paddingVertical: 8,
   },
   options: {
     flex: 0.1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   info: {
-    color: 'white',
+    color: "white",
     fontSize: 20,
     paddingVertical: 4,
     paddingHorizontal: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
-})
+});

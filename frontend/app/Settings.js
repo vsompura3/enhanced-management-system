@@ -77,7 +77,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 16,
   },
   exit: {
     padding: 8,
@@ -122,7 +121,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 28,
     fontWeight: "bold",
-    paddingHorizontal: 20,
   },
   email: {
     color: "#ABFFFE",
@@ -134,7 +132,6 @@ const styles = StyleSheet.create({
   workspace: {
     flex: 0.15,
     padding: 10,
-    marginHorizontal: 10,
   },
   workContent: {
     flexDirection: "row",
@@ -144,7 +141,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#262A34",
     borderWidth: 1,
     borderRadius: 12,
-    height: 77,
+    height: 76,
   },
   workContentText: {
     color: "white",
@@ -179,10 +176,8 @@ const styles = StyleSheet.create({
     flex: 0.07,
     backgroundColor: "red",
     justifyContent: "center",
-    alignSelf: "center",
     alignItems: "center",
-    width: 370,
-    margin: 10,
     borderRadius: 10,
+    marginHorizontal: 10,
   },
 });
