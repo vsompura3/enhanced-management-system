@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient'
 import { StatusBar as SBar } from 'expo-status-bar'
-import React from 'react'
+import React, { createContext, useState } from 'react'
 import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native'
 import { Provider as PaperProvider } from 'react-native-paper'
 import Dashboard from './app/Dashboard'
@@ -9,29 +9,34 @@ import Onboarding from './app/Onboarding'
 import Profile from './app/Profile'
 import Settings from './app/Settings'
 import User from './app/User'
+import { EMSContext } from './context/EMSContext'
 
 export default function App() {
+  const [state, setState] = useState([])
+
   return (
-    <PaperProvider>
-      <LinearGradient
-        colors={['#3A1078', '#18172A', '#18172A']}
-        style={[styles.linearGradient]}
-        start={{ x: 0.02, y: 0 }}
-        end={{ x: 0.6, y: 0.1 }}
-      >
-        <SafeAreaView style={styles.screen}>
-          <View style={styles.appContainer}>
-            {/* <User /> */}
-            <Login />
-            {/* <Dashboard /> */}
-            {/* <Onboarding /> */}
-            {/* <Profile /> */}
-            {/* <Settings /> */}
-          </View>
-        </SafeAreaView>
-        <SBar style="auto" />
-      </LinearGradient>
-    </PaperProvider>
+    <EMSContext.Provider value={{ state, setState }}>
+      <PaperProvider>
+        <LinearGradient
+          colors={['#3A1078', '#18172A', '#18172A']}
+          style={[styles.linearGradient]}
+          start={{ x: 0.02, y: 0 }}
+          end={{ x: 0.6, y: 0.1 }}
+        >
+          <SafeAreaView style={styles.screen}>
+            <View style={styles.appContainer}>
+              {/* <User /> */}
+              <Login />
+              {/* <Dashboard /> */}
+              {/* <Onboarding /> */}
+              {/* <Profile /> */}
+              {/* <Settings /> */}
+            </View>
+          </SafeAreaView>
+          <SBar style="auto" />
+        </LinearGradient>
+      </PaperProvider>
+    </EMSContext.Provider>
   )
 }
 
