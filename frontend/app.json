@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "ems",
-    "slug": "enhanced-management-system",
+    "slug": "ems",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/ems-logo.png",
@@ -14,7 +14,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.tanupam.ems"
@@ -31,9 +33,8 @@
     },
     "extra": {
       "eas": {
-        "projectId": "8b6a1ed7-ffe4-4f0c-9e84-50c3ff8cabfc"
+        "projectId": "08118a7f-9a54-4691-ae9c-61acbbc9c9f3"
       }
-    },
-    "owner": "vsompura3"
+    }
   }
 }
